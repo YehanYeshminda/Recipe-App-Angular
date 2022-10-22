@@ -1,10 +1,14 @@
-<app-recipe-header></app-recipe-header>
+<app-recipe-header (typeSelected)="onNavigate($event)"></app-recipe-header>
 
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <app-recipe-recipes></app-recipe-recipes>
-      <app-shopping-list></app-shopping-list>
+
+      <!-- if the loaded type is recipe this component is shown -->
+      <app-recipe-recipes *ngIf="loadedType === 'recipe'"></app-recipe-recipes>
+
+      <!-- if the loaded type is shopping list then this component is shown -->
+      <app-shopping-list *ngIf="loadedType === 'shoppingList'"></app-shopping-list>
     </div>
   </div>
 </div>
