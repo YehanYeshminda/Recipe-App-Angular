@@ -17,13 +17,13 @@ export class RecipeListComponent implements OnInit {
     new Recipe(
       'A Test recipe 2',
       'This is the description of the recipe 2',
-      'https://cpb-us-e1.wpmucdn.com/blogs.uoregon.edu/dist/c/829/files/2012/10/PSD_Food_illustrations_3190_pancakes_with_butter-1wi1tz5.jpg'
+      'https://post.healthline.com/wp-content/uploads/2020/09/healthy-eating-ingredients-732x549-thumbnail.jpg'
     ),
 
     new Recipe(
       'A Test recipe 3',
       'This is the description of the recipe 3',
-      'https://cpb-us-e1.wpmucdn.com/blogs.uoregon.edu/dist/c/829/files/2012/10/PSD_Food_illustrations_3190_pancakes_with_butter-1wi1tz5.jpg'
+      'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg'
     ),
   ];
 
