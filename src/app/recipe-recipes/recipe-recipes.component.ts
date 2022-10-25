@@ -1,23 +1,23 @@
 import { Recipe } from './recipe.model';
 import { Component, OnInit } from '@angular/core';
+import { ManageRecipeService } from './services/manage-recipe.service';
 
 @Component({
   selector: 'app-recipe-recipes',
   templateUrl: './recipe-recipes.component.html',
   styleUrls: ['./recipe-recipes.component.css'],
+  providers: [ManageRecipeService],
 })
 export class RecipeRecipesComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit(): void {}
+  constructor(private manageRecipeService: ManageRecipeService) {}
 
   // we create a variable to store the selected recipe
   selectedRecipeStored?: Recipe;
 
-  // we then use a function in order to fetch the recipe which is given from the child which is
-  // list and we take that item as a event and we then store it inside of the variable defined
-
-  selectedRecipe(recipe: Recipe) {
-    this.selectedRecipeStored = recipe;
+  // using this we are able to get the value which is emmited from the recipe selected
+  ngOnInit(): void {
+    this.manageRecipeService.recipeSelected.subscribe((recipe: Recipe) => {
+      this.selectedRecipeStored = recipe;
+    });
   }
 }

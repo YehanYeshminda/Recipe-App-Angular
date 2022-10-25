@@ -1,15 +1,15 @@
 <div class="row">
-    <div class="col-md-5">
-        <app-recipe-list (recipeSelectedType)="selectedRecipe($event)"></app-recipe-list>
-    </div>
-    <div class="col-md-7">
+  <div class="col-md-5">
+    <app-recipe-list></app-recipe-list>
+  </div>
+  <div class="col-md-7">
 
-        <!-- we only want to display if the selected recipe is set else we don't want to show -->
-        <!-- else we show the infoText -->
-        <app-recipe-detail *ngIf="selectedRecipeStored; else infoText" [recipe]="selectedRecipeStored">
-        </app-recipe-detail>
-        <ng-template #infoText>
-            <p>Please select a recipe</p>
-        </ng-template>
-    </div>
+    <!-- we only want to display if the selected recipe is set else we don't want to show -->
+    <!-- else we show the infoText -->
+    <app-recipe-detail *ngIf="selectedRecipeStored; else infoText" [recipe]="selectedRecipeStored">
+    </app-recipe-detail>
+    <ng-template #infoText>
+      <p>Please select a recipe</p>
+    </ng-template>
+  </div>
 </div>
