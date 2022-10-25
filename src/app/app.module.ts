@@ -28,7 +28,7 @@ import { ManageShoppingListService } from './shopping-list/services/manage-shopp
     DropdownMenuDirective,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
-  providers: [],
+  providers: [ManageShoppingListService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

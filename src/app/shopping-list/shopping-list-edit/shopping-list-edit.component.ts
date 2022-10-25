@@ -8,17 +8,15 @@ import {
   Output,
   ViewChild,
 } from '@angular/core';
+import { ManageShoppingListService } from '../services/manage-shoppinglist.service';
 
 @Component({
   selector: 'app-shopping-list-edit',
   templateUrl: './shopping-list-edit.component.html',
   styleUrls: ['./shopping-list-edit.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ShoppingListEditComponent implements OnInit {
-  // used to output the value to the outside component
-  @Output()
-  newRecipeInformaiton = new EventEmitter<Ingredient>();
+  constructor(private manageShoppingList: ManageShoppingListService) {}
 
   // used to select the local reference in order to get the value
   @ViewChild('productName') newShoppingListItemName!: ElementRef;
@@ -31,9 +29,8 @@ export class ShoppingListEditComponent implements OnInit {
 
     // this is used for better practice
     const fullRecipe = new Ingredient(ingName, ingPrice);
-    this.newRecipeInformaiton.emit(fullRecipe);
+    this.manageShoppingList.addIngredients(fullRecipe);
   }
-  constructor() {}
 
   ngOnInit(): void {}
 }
